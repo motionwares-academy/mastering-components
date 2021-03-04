@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from "./Card";
 
 function App() {
+  // const allData = ["First Card", "Second Card", "Third Card"];
+
+  const allData = [
+    {
+      title: "First Card",
+      subtitle: "First card subtitle",
+    },
+
+    {
+      title: "Second Card",
+      subtitle: "Second card subtitle",
+    },
+
+    {
+      title: "Third Card",
+      subtitle: "Third card subtitle",
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container py-5">
+      {allData.map((data) => {
+        return <Card title={data.title} subtitle={data.subtitle} />;
+      })}
     </div>
   );
 }
